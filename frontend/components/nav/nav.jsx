@@ -53,18 +53,21 @@ class Nav extends React.Component {
   }
 
   render() {
-    const { classes } = this.props;
+    const { classes, currentUser } = this.props;
     const { auth, anchorEl } = this.state;
     const open = Boolean(anchorEl);
+    let loggedIn = Boolean(currentUser);
+
+    console.log(currentUser);
 
     return (
       <div className={classes.root}>
         <FormGroup>
           <FormControlLabel
             control={
-              <Switch checked={auth} onChange={this.handleChange} aria-label="LoginSwitch" />
+              <Switch checked={loggedIn} onChange={this.handleChange} aria-label="LoginSwitch" />
             }
-            label={auth ? 'Logout' : 'Login'}
+            label={loggedIn ? 'Logout' : 'Login'}
           />
         </FormGroup>
         <AppBar position="static">

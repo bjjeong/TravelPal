@@ -192,6 +192,7 @@ var App = function App(_ref) {
   return _react2.default.createElement(
     'div',
     null,
+    _react2.default.createElement(_nav_container2.default, null),
     _react2.default.createElement(
       'div',
       null,
@@ -339,12 +340,17 @@ var Nav = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var classes = this.props.classes;
+      var _props = this.props,
+          classes = _props.classes,
+          currentUser = _props.currentUser;
       var _state = this.state,
           auth = _state.auth,
           anchorEl = _state.anchorEl;
 
       var open = Boolean(anchorEl);
+      var loggedIn = Boolean(currentUser);
+
+      console.log(currentUser);
 
       return _react2.default.createElement(
         'div',
@@ -353,8 +359,8 @@ var Nav = function (_React$Component) {
           _FormGroup2.default,
           null,
           _react2.default.createElement(_FormControlLabel2.default, {
-            control: _react2.default.createElement(_Switch2.default, { checked: auth, onChange: this.handleChange, 'aria-label': 'LoginSwitch' }),
-            label: auth ? 'Logout' : 'Login'
+            control: _react2.default.createElement(_Switch2.default, { checked: loggedIn, onChange: this.handleChange, 'aria-label': 'LoginSwitch' }),
+            label: loggedIn ? 'Logout' : 'Login'
           })
         ),
         _react2.default.createElement(

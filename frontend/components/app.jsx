@@ -5,9 +5,10 @@ import Nav from './nav/nav_container';
 
 const App = ({ children }) => (
   <div>
+      <Nav/>
       <div>
         <Switch>
-          <Route path="/" component={Nav} />
+          <Route path="/" component={ Nav } />
         </Switch>
       </div>
   </div>
