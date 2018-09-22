@@ -6,14 +6,11 @@ import { HashRouter } from 'react-router-dom';
 const Root = ({ store }) => {
 
   return (
-    // <Provider store={store}>
-    //   <HashRouter>
-    //     <App />
-    //   </HashRouter>
-    // </Provider>
-    <div>
-      <h1>Hello</h1>
-    </div>
+    <Provider store={store}>
+      <HashRouter>
+        <App />
+      </HashRouter>
+    </Provider>
   );
 };
 
