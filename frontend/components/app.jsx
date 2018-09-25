@@ -8,7 +8,7 @@ const App = ({ children }) => (
       <Nav/>
       <div>
         <Switch>
-          <Route path="/" component={ Nav } />
+          {/* <Route path="/" component={ Nav } /> */}
         </Switch>
       </div>
   </div>

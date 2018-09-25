@@ -7,9 +7,6 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 
@@ -47,9 +44,7 @@ class Nav extends React.Component {
   }
 
   handleClose() {
-    return () => {
-      this.setState({ anchorEl: null });
-    };
+    this.setState({ anchorEl: null });
   }
 
   render() {
@@ -58,25 +53,15 @@ class Nav extends React.Component {
     const open = Boolean(anchorEl);
     let loggedIn = Boolean(currentUser);
 
-    console.log(currentUser);
-
     return (
       <div className={classes.root}>
-        <FormGroup>
-          <FormControlLabel
-            control={
-              <Switch checked={loggedIn} onChange={this.handleChange} aria-label="LoginSwitch" />
-            }
-            label={loggedIn ? 'Logout' : 'Login'}
-          />
-        </FormGroup>
         <AppBar position="static">
           <Toolbar>
             <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
               <MenuIcon />
             </IconButton>
             <Typography variant="title" color="inherit" className={classes.grow}>
-              Photos
+              TravelPal
             </Typography>
             {auth && (
               <div>
